@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PristineGatherings", "PristineGatherings.csproj", "{5324A1B9-D475-4763-9C5E-CFE41B3F8161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{DD51194F-B23E-4801-875D-2D5AC008624E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5324A1B9-D475-4763-9C5E-CFE41B3F8161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5324A1B9-D475-4763-9C5E-CFE41B3F8161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5324A1B9-D475-4763-9C5E-CFE41B3F8161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD51194F-B23E-4801-875D-2D5AC008624E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD51194F-B23E-4801-875D-2D5AC008624E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD51194F-B23E-4801-875D-2D5AC008624E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD51194F-B23E-4801-875D-2D5AC008624E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
