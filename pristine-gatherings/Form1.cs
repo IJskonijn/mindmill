@@ -49,7 +49,7 @@ namespace PristineGatherings
             double maxLat = 85;
             double minLng = -155;
             double maxLng = 155;
-            gmap.BoundsOfMap = new RectLatLng?(new RectLatLng(minLat, minLng, maxLng - minLng, maxLat - minLat));
+            gmap.BoundsOfMap = new RectLatLng?(new RectLatLng(maxLat, minLng, maxLng - minLng, maxLat - minLat));
 
             markersOverlay = new GMapOverlay();
             this.eventsList = new List<MapEvent>();
