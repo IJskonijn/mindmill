@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PristineGatherings
 {
@@ -69,7 +70,7 @@ namespace PristineGatherings
             Lname = textBox4.Text;
             ProfilePic = pictureBox1.Image;
 
-            if (Email.Length > 5 && Pass.Length > 5 && Fname.Length > 1 && Lname.Length > 1)
+            if (Email.Length >= 5 && Pass.Length >= 5 && Fname.Length >= 1 && Lname.Length >= 1)
             {
                 if (IsValidEmail(Email))
                 {
@@ -100,7 +101,20 @@ namespace PristineGatherings
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             openFileDialog1.FileName = "";
-            openFileDialog1.ShowDialog();
+            string upload = Application.StartupPath + @"\Upload\";
+
+            if (!Directory.Exists(upload)) 
+            { 
+                Directory.CreateDirectory(upload); 
+            }
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) 
+            {
+                var fileName = openFileDialog1.FileName;
+                System.IO.File.Copy(fileName, Path.Combine(Path.GetDirectoryName(fileName), upload + "profile.jpg"), true);
+                pictureBox1.ImageLocation = upload + "profile.jpg";
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
     }
 }

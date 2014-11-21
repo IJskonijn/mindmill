@@ -142,5 +142,15 @@ namespace PristineGatherings
             eventsList.Add(new MapEvent("Zwolle", gmap, this));
 
         }
+
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            string upload = Application.StartupPath + @"\Upload\profile.jpg";
+
+            if (System.IO.File.Exists(upload))
+            {
+                System.IO.File.Delete(upload);
+            }
+        }
     }
 }
