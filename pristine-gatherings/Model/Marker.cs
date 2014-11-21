@@ -19,8 +19,9 @@ namespace PristineGatherings
         {
             this.image = image;
             base.Size = image.Size;
+            this.Offset = new System.Drawing.Point(-Size.Width / 2, -Size.Height);
             CenterMarker();
-                    
+                              
         }
 
         public override void OnRender(Graphics g)
@@ -33,8 +34,8 @@ namespace PristineGatherings
 
         private void CenterMarker()
         {
-            this.x = LocalPosition.X - (image.Width / 2);
-            this.y = LocalPosition.Y - image.Height;      
+            this.x = LocalPosition.X;
+            this.y = LocalPosition.Y;      
         }
 
 
