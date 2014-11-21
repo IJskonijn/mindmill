@@ -12,7 +12,8 @@ namespace PristineGatherings
 {
     public class MapEvent
     {
-        private Marker marker;     
+        private Marker marker;
+        private PointLatLng worldLocation;
         private string eventName;
         private string eventInformation;
         private bool isDeleted;
@@ -38,6 +39,7 @@ namespace PristineGatherings
 
             if(pos != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
             {
+                this.worldLocation = pos.Value;
                 marker = new Marker(gmap, pos.Value, PristineGatherings.Properties.Resources.map_marker);
                 mainView.MarkersOverlay.Markers.Add(marker);
                 mainView.MarkersOverlay.Control.Invalidate(); 
