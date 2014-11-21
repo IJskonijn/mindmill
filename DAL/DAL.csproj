@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD51194F-B23E-4801-875D-2D5AC008624E}</ProjectGuid>
+    <ProjectGuid>{44AE26D0-E5B8-4436-9E64-F66D0EE9B983}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
-    <AssemblyName>DAL</AssemblyName>
+    <AssemblyName>DALTEST</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,62 +33,61 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Pristine.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Pristine.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="packages.config" />
-    <None Include="Pristine.Context.tt">
+    <EntityDeploy Include="PristineModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PristineModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PristineModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Pristine.edmx</DependentUpon>
-      <LastGenOutput>Pristine.Context.cs</LastGenOutput>
+      <DependentUpon>PristineModel.edmx</DependentUpon>
+      <LastGenOutput>PristineModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="Pristine.edmx.diagram">
-      <DependentUpon>Pristine.edmx</DependentUpon>
+    <None Include="PristineModel.edmx.diagram">
+      <DependentUpon>PristineModel.edmx</DependentUpon>
     </None>
-    <None Include="Pristine.tt">
+    <None Include="PristineModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Pristine.edmx</DependentUpon>
-      <LastGenOutput>Pristine.cs</LastGenOutput>
+      <DependentUpon>PristineModel.edmx</DependentUpon>
+      <LastGenOutput>PristineModel.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Pristine.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Pristine.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Pristine.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Pristine.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Pristine.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Pristine.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="user.cs">
-      <DependentUpon>Pristine.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\pristine-gatherings\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\pristine-gatherings\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PristineModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PristineModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PristineModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PristineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PristineModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PristineModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>PristineModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -51,7 +51,12 @@ namespace PristineGatherings
 
         public void RegNewUser()
         {
-            //saving to database
+            using (var db = new pristinedbEntities())
+            {
+                var user = new user { email = Email, voornaam = Fname, achternaam = Lname, password = Pass };
+                db.user.Add(user);
+                db.SaveChanges();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
