@@ -152,5 +152,10 @@ namespace PristineGatherings
                 System.IO.File.Delete(upload);
             }
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
