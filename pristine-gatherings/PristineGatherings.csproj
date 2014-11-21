@@ -40,9 +40,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Ref\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>packages\MySql.Data.6.9.5\lib\net45\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -69,7 +66,8 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marker.cs" />
+    <Compile Include="Model\MapEvent.cs" />
+    <Compile Include="Model\Marker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -117,7 +115,6 @@
   <ItemGroup>
     <Content Include="GMap.NET.Core.dll" />
     <Content Include="GMap.NET.WindowsForms.dll" />
-    <Content Include="MySql.Data.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

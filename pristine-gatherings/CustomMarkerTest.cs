@@ -18,7 +18,7 @@ namespace PristineGatherings
         public CustomMarkerTest(PointLatLng x, Bitmap image) : base(x)
         {
             this.image = image;
-        
+               
         }
         public override void OnRender(System.Drawing.Graphics g)
         {

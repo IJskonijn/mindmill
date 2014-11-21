@@ -11,15 +11,24 @@ using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
+using GMap.NET.MapProviders;
 
 namespace PristineGatherings
 {
     public partial class Form1 : Form
     {
+        private GMapOverlay markersOverlay; // Layer of markers.
+        private List<MapEvent> eventsList; // List of all the events on the map;
+
+        public GMapOverlay MarkersOverlay
+        {
+            get { return markersOverlay; }
+        }
+
         public Form1()
         {
             InitializeComponent();
-            this.Size = Screen.PrimaryScreen.Bounds.Size;
+            this.Size = Screen.PrimaryScreen.Bounds.Size;          
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,20 +40,50 @@ namespace PristineGatherings
             gmap.OnMarkerEnter += gmap_OnMarkerEnter;
             gmap.OnMarkerLeave += gmap_OnMarkerLeave;
             gmap.OnMarkerClick += gmap_OnMarkerClick;
-            gmap.MouseClick += gmap_OnMapClick;
+            //gmap.MouseClick += gmap_OnMapClick;
             gmap.Size = this.Size;
+            gmap.ShowCenter = false; // Disables blue middle marker.
 
-            GMapOverlay markersOverlay = new GMapOverlay(gmap, "markers");
-            //GMapMarker marker = new CustomMarkerTest(new PointLatLng(-25.966688, 32.580528), PristineGatherings.Properties.Resources.simple_mapmarker);
-            GMapMarker marker = new Marker(new PointLatLng(52.50108592, 6.07904501), PristineGatherings.Properties.Resources.map_marker);
-
-            markersOverlay.Markers.Add(marker);
+            markersOverlay = new GMapOverlay();
+            this.eventsList = new List<MapEvent>();
+            
             gmap.Overlays.Add(markersOverlay);
+
+            TestPlaceSomeEventsOnMap(); // Test placing events on map.
+
+            // Zoom in and out by one to update the markers.
+            gmap.Zoom = gmap.Zoom + 1;
+            gmap.Zoom = gmap.Zoom - 1;
+
         }
 
-        private void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        // Deletes the marker when it is clicked.
+        void gmap_OnMarkerClick(object item, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Before marker delete");
+            Console.WriteLine("Markers: " + markersOverlay.Markers.Count);
+            Console.WriteLine("Events: " + eventsList.Count);
+
+            if (item is Marker)
+            {
+                Marker eventToDelete = item as Marker;
+                foreach (MapEvent mapEvent in eventsList)
+                {
+                    if (mapEvent.Marker.Equals(eventToDelete))
+                    {
+                        markersOverlay.Markers.Remove(eventToDelete);
+                        markersOverlay.Control.Invalidate();
+                        mapEvent.IsDeleted = true;
+                        break;
+                    }
+                }
+
+                Console.WriteLine("After marker delete");
+                Console.WriteLine("Markers: " + markersOverlay.Markers.Count);
+                Console.WriteLine("Events: " + eventsList.Count);
+
+                gmap.Invalidate();         
+            }
         }
 
         private void gmap_OnMarkerLeave(GMapMarker item)
@@ -66,24 +105,36 @@ namespace PristineGatherings
         /*
          * Adds a new marker at the mouse location if left mouse button is pressed.
          */
-        private void gmap_OnMapClick(object obj, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Left)
-            {
-                GMapOverlay markersOverlay = new GMapOverlay(gmap, "markers");
+        //private void gmap_OnMapClick(object obj, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        double lat = gmap.FromLocalToLatLng(e.X, e.Y).Lat;
+        //        double lng = gmap.FromLocalToLatLng(e.X, e.Y).Lng;
 
-                double lat = gmap.FromLocalToLatLng(e.X, e.Y).Lat;
-                double lng = gmap.FromLocalToLatLng(e.X, e.Y).Lng;
+        //        markersOverlay.Markers.Add(new Marker(new PointLatLng(lat, lng), PristineGatherings.Properties.Resources.map_marker));
+        //        markersOverlay.Control.Invalidate();
+        //    }
 
-                markersOverlay.Markers.Add(new Marker(new PointLatLng(lat, lng), PristineGatherings.Properties.Resources.map_marker));
-                gmap.Overlays.Add(markersOverlay);
-            }
-            
-        }
+        //}
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             new Form2();
+        }
+
+        /*
+         * Test method to add some markers at the keyword place.
+         */
+        private void TestPlaceSomeEventsOnMap()
+        {
+            eventsList.Add(new MapEvent("Netherlands, Amsterdam", this));
+            eventsList.Add(new MapEvent("Germany, Berlin", this));
+            eventsList.Add(new MapEvent("Ukraine", this));
+            eventsList.Add(new MapEvent("Tokyo", this));
+            eventsList.Add(new MapEvent("Larache", this));
+            eventsList.Add(new MapEvent("Zwolle", this));
+
         }
     }
 }
