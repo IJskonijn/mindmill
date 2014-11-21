@@ -28,13 +28,14 @@ namespace PristineGatherings
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = Screen.PrimaryScreen.Bounds.Size;          
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // Initialize map:
-            gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
+            gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapQuestProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gmap.Position = new PointLatLng(48.74894534, 16.12792969); // Centering the map over Europe at startup;
             gmap.OnMarkerEnter += gmap_OnMarkerEnter;
@@ -54,7 +55,6 @@ namespace PristineGatherings
             // Zoom in and out by one to update the markers.
             gmap.Zoom = gmap.Zoom + 1;
             gmap.Zoom = gmap.Zoom - 1;
-
         }
 
         // Deletes the marker when it is clicked.
@@ -118,11 +118,6 @@ namespace PristineGatherings
 
         //}
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            new Form2();
-        }
-
         /*
          * Test method to add some markers at the keyword place.
          */
@@ -135,6 +130,21 @@ namespace PristineGatherings
             eventsList.Add(new MapEvent("Larache", this));
             eventsList.Add(new MapEvent("Zwolle", this));
 
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_click));
+            new Form2();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_enter));
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2));
         }
     }
 }

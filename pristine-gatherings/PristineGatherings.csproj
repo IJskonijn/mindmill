@@ -119,6 +119,17 @@
     <Content Include="GMap.NET.Core.dll" />
     <Content Include="GMap.NET.WindowsForms.dll" />
     <Content Include="MySql.Data.dll" />
+    <None Include="Resources\button2_enter.png" />
+    <None Include="Resources\button2_click.png" />
+    <None Include="Resources\button2.png" />
+    <None Include="Resources\smallbutton_click.png" />
+    <None Include="Resources\smallbutton_enter.png" />
+    <None Include="Resources\exitbuttonclick.png" />
+    <None Include="Resources\exitbuttonenter.png" />
+    <None Include="Resources\smallbutton.png" />
+    <None Include="Resources\loginback.png" />
+    <None Include="Resources\button_mouseenter.png" />
+    <None Include="Resources\button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
