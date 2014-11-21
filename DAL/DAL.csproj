@@ -33,6 +33,59 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Pristine.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Pristine.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Pristine.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pristine.edmx</DependentUpon>
+      <LastGenOutput>Pristine.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Pristine.edmx.diagram">
+      <DependentUpon>Pristine.edmx</DependentUpon>
+    </None>
+    <None Include="Pristine.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pristine.edmx</DependentUpon>
+      <LastGenOutput>Pristine.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pristine.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pristine.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pristine.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pristine.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pristine.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pristine.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>Pristine.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\pristine-gatherings\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
