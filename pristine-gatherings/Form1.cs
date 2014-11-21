@@ -120,7 +120,12 @@ namespace PristineGatherings
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new Form2();
+            new Form2(this);
+        }
+
+        public void ShowRegister()
+        {
+            new Form3();
         }
 
         /*
