@@ -57,7 +57,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(837, 503);
+            this.gmap.Size = new System.Drawing.Size(628, 409);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 5D;
             // 
@@ -69,7 +69,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(748, 43);
+            this.button1.Location = new System.Drawing.Point(539, 24);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 97);
@@ -87,17 +87,17 @@
             // hScrollBar1
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(298, 440);
+            this.hScrollBar1.Location = new System.Drawing.Point(224, 358);
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(252, 40);
+            this.hScrollBar1.Size = new System.Drawing.Size(189, 40);
             this.hScrollBar1.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(838, 502);
+            this.ClientSize = new System.Drawing.Size(628, 408);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gmap);
