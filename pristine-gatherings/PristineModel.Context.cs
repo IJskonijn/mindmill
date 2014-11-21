@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL
+namespace PristineGatherings
 {
     using System;
     using System.Data.Entity;
