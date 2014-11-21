@@ -29,11 +29,13 @@ namespace PristineGatherings
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Size = Screen.PrimaryScreen.Bounds.Size;          
+            this.Size = Screen.PrimaryScreen.Bounds.Size;  
+       
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+  
             // Initialize map:
             gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapQuestProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
@@ -41,9 +43,13 @@ namespace PristineGatherings
             gmap.OnMarkerEnter += gmap_OnMarkerEnter;
             gmap.OnMarkerLeave += gmap_OnMarkerLeave;
             gmap.OnMarkerClick += gmap_OnMarkerClick;
-            //gmap.MouseClick += gmap_OnMapClick;
             gmap.Size = this.Size;
             gmap.ShowCenter = false; // Disables blue middle marker.
+            double minLat = -85;
+            double maxLat = 85;
+            double minLng = -155;
+            double maxLng = 155;
+            gmap.BoundsOfMap = new RectLatLng?(new RectLatLng(minLat, minLng, maxLng - minLng, maxLat - minLat));
 
             markersOverlay = new GMapOverlay();
             this.eventsList = new List<MapEvent>();
@@ -52,9 +58,7 @@ namespace PristineGatherings
 
             TestPlaceSomeEventsOnMap(); // Test placing events on map.
 
-            // Zoom in and out by one to update the markers.
-            gmap.Zoom = gmap.Zoom + 1;
-            gmap.Zoom = gmap.Zoom - 1;
+            gmap.Invalidate();
 
         }
 
