@@ -5,14 +5,9 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="pristinedbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'def.pristinedb.user' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="email" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="voornaam" />
-            <PropertyRef Name="achternaam" />
           </Key>
           <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="200" Nullable="false" />
@@ -22,16 +17,7 @@ warning 6002: The table/view 'def.pristinedb.user' does not have a primary key d
           <Property Name="picture" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityContainer Name="pristinedbModelStoreContainer">
-          <EntitySet Name="user" EntityType="Self.user" store:Type="Tables" store:Schema="pristinedb">
-            <DefiningQuery>SELECT
-`user`.`email`, 
-`user`.`password`, 
-`user`.`voornaam`, 
-`user`.`tussenvoegsels`, 
-`user`.`achternaam`, 
-`user`.`picture`
-FROM `user` AS `user`</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="user" EntityType="Self.user" Schema="pristinedb" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -41,9 +27,6 @@ FROM `user` AS `user`</DefiningQuery>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="email" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="voornaam" />
-            <PropertyRef Name="achternaam" />
           </Key>
           <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
