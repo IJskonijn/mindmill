@@ -98,7 +98,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(539, 35);
+            this.button1.Location = new System.Drawing.Point(539, 24);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 97);
@@ -107,6 +107,19 @@
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.hScrollBar1.Location = new System.Drawing.Point(224, 358);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(189, 40);
+            this.hScrollBar1.TabIndex = 2;
             // 
             // Form1
             // 
