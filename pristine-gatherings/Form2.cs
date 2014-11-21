@@ -16,6 +16,7 @@ namespace PristineGatherings
         private static string TxtBox2_InitialText = "Password";
         private string user;
         private string pass;
+        private Form1 Main;
         bool IsValidEmail(string email)
         {
             try

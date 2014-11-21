@@ -49,7 +49,8 @@ namespace PristineGatherings
             double maxLat = 85;
             double minLng = -155;
             double maxLng = 155;
-            gmap.BoundsOfMap = new RectLatLng?(new RectLatLng(minLat, minLng, maxLng - minLng, maxLat - minLat));
+            gmap.BoundsOfMap = new RectLatLng?(new RectLatLng(maxLat, minLng, maxLng - minLng, maxLat - minLat));
+             
 
             markersOverlay = new GMapOverlay();
             this.eventsList = new List<MapEvent>();
@@ -122,11 +123,11 @@ namespace PristineGatherings
 
         //}
 
-        }
-
         public void ShowRegister()
         {
             new Form3();
+        }
+
         /*
          * Test method to add some markers at the keyword place.
          */
@@ -151,11 +152,10 @@ namespace PristineGatherings
             }
         }
 
-        }
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_click));
-            new Form2();
+            new Form2(this);
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)

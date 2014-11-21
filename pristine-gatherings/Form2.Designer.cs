@@ -135,14 +135,14 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 95);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(46, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Register";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            //this.linkLabel1.AutoSize = true;
+            //this.linkLabel1.Location = new System.Drawing.Point(12, 95);
+            //this.linkLabel1.Name = "linkLabel1";
+            //this.linkLabel1.Size = new System.Drawing.Size(46, 13);
+            //this.linkLabel1.TabIndex = 6;
+            //this.linkLabel1.TabStop = true;
+            //this.linkLabel1.Text = "Register";
+            //this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form2
             // 
