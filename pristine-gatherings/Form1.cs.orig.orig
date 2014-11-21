@@ -29,8 +29,20 @@ namespace PristineGatherings
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+<<<<<<< HEAD
+<<<<<<< HEAD
             this.Size = Screen.PrimaryScreen.Bounds.Size;  
        
+=======
+            this.Size = Screen.PrimaryScreen.Bounds.Size;          
+>>>>>>> c56746e6b9a808278ee6867df42af015cdcd5ef5
+=======
+            this.Size = Screen.PrimaryScreen.Bounds.Size;          
+=======
+            this.Size = Screen.PrimaryScreen.Bounds.Size;  
+       
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
+>>>>>>> 6da970b86f5967c8ff7dd408337657bb6e01d833
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,7 +70,19 @@ namespace PristineGatherings
 
             TestPlaceSomeEventsOnMap(); // Test placing events on map.
 
+<<<<<<< HEAD
             gmap.Invalidate();
+
+=======
+<<<<<<< HEAD
+            // Zoom in and out by one to update the markers.
+            gmap.Zoom = gmap.Zoom + 1;
+            gmap.Zoom = gmap.Zoom - 1;
+=======
+            gmap.Invalidate();
+
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
+>>>>>>> 6da970b86f5967c8ff7dd408337657bb6e01d833
         }
 
         // Deletes the marker when it is clicked.
@@ -122,10 +146,25 @@ namespace PristineGatherings
 
         //}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 6da970b86f5967c8ff7dd408337657bb6e01d833
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            new Form2(this);
+        }
+
         public void ShowRegister()
         {
             new Form3();
         }
+
+<<<<<<< HEAD
+=======
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
+>>>>>>> 6da970b86f5967c8ff7dd408337657bb6e01d833
         /*
          * Test method to add some markers at the keyword place.
          */
@@ -149,11 +188,17 @@ namespace PristineGatherings
                 System.IO.File.Delete(upload);
             }
         }
+<<<<<<< HEAD
+=======
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_click));
-            new Form2(this);
+            new Form2();
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -165,5 +210,6 @@ namespace PristineGatherings
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2));
         }
+>>>>>>> 6da970b86f5967c8ff7dd408337657bb6e01d833
     }
 }
