@@ -37,7 +37,7 @@ namespace PristineGatherings
         {
   
             // Initialize map:
-            gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
+            gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapQuestProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gmap.Position = new PointLatLng(48.74894534, 16.12792969); // Centering the map over Europe at startup;
             gmap.OnMarkerEnter += gmap_OnMarkerEnter;
@@ -125,7 +125,12 @@ namespace PristineGatherings
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new Form2();
+            new Form2(this);
+        }
+
+        public void ShowRegister()
+        {
+            new Form3();
         }
 
         /*
@@ -133,13 +138,23 @@ namespace PristineGatherings
          */
         private void TestPlaceSomeEventsOnMap()
         {
-            eventsList.Add(new MapEvent("Netherlands, Amsterdam", this));
-            eventsList.Add(new MapEvent("Germany, Berlin", this));
-            eventsList.Add(new MapEvent("Ukraine", this));
-            eventsList.Add(new MapEvent("Tokyo", this));
-            eventsList.Add(new MapEvent("Larache", this));
-            eventsList.Add(new MapEvent("Zwolle", this));
+            eventsList.Add(new MapEvent("Lieven de Keystraat, Almere, Flevoland, Nederland, 1333PA, Nederland", gmap, this));
+            eventsList.Add(new MapEvent("Germany, Berlin", gmap, this));
+            eventsList.Add(new MapEvent("Ukraine", gmap, this));
+            eventsList.Add(new MapEvent("Tokyo", gmap, this));
+            eventsList.Add(new MapEvent("Larache", gmap, this));
+            eventsList.Add(new MapEvent("Zwolle", gmap, this));
 
+        }
+
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            string upload = Application.StartupPath + @"\Upload\profile.jpg";
+
+            if (System.IO.File.Exists(upload))
+            {
+                System.IO.File.Delete(upload);
+            }
         }
     }
 }

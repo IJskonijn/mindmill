@@ -15,6 +15,7 @@ namespace PristineGatherings
 
         private String User;
         private String Pass;
+        private Form1 Main;
         bool IsValidEmail(string email)
         {
             try
@@ -34,17 +35,24 @@ namespace PristineGatherings
             }
         }
 
-        public Form2()
+        public Form2(Form1 main)
         {
             InitializeComponent();
 
             this.MinimizeBox = false;
             this.MaximizeBox = false;
-            this.ControlBox = false;
+            //this.ControlBox = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
 
+            this.Main = main;
+
             this.ShowDialog();
+        }
+
+        private void Login() 
+        {
+            //database here
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,6 +84,12 @@ namespace PristineGatherings
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Main.ShowRegister();
             this.Dispose();
         }
     }
