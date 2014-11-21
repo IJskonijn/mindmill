@@ -32,6 +32,7 @@
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,11 +83,20 @@
             this.toolStripButton1.Text = "Login";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.hScrollBar1.Location = new System.Drawing.Point(190, 318);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(252, 40);
+            this.hScrollBar1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 407);
+            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gmap);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -108,6 +118,7 @@
         private GMap.NET.WindowsForms.GMapControl gmap;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }
 
