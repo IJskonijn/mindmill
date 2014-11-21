@@ -43,7 +43,7 @@
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gmap.LevelsKeepInMemmory = 5;
-            this.gmap.Location = new System.Drawing.Point(0, 0);
+            this.gmap.Location = new System.Drawing.Point(1, 0);
             this.gmap.Margin = new System.Windows.Forms.Padding(0);
             this.gmap.MarkersEnabled = true;
             this.gmap.MaxZoom = 16;
@@ -57,7 +57,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(839, 503);
+            this.gmap.Size = new System.Drawing.Size(837, 503);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 5D;
             // 
@@ -66,10 +66,10 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button1.BackgroundImage = global::PristineGatherings.Properties.Resources.button2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(745, 39);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(748, 43);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 97);
@@ -81,19 +81,13 @@
             // 
             // toolStripButton2
             // 
-            //this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            //this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            //this.toolStripButton2.Image = global::PristineGatherings.Properties.Resources.exit;
-            //this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            //this.toolStripButton2.Name = "toolStripButton2";
-            //this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            //this.toolStripButton2.Text = "toolStripButton2";
-            //this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
             // 
             // hScrollBar1
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(190, 318);
+            this.hScrollBar1.Location = new System.Drawing.Point(298, 440);
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(252, 40);
             this.hScrollBar1.TabIndex = 2;
@@ -102,7 +96,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(838, 502);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gmap);
