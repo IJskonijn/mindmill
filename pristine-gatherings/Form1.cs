@@ -28,13 +28,14 @@ namespace PristineGatherings
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = Screen.PrimaryScreen.Bounds.Size;          
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // Initialize map:
-            gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
+            gmap.MapProvider = GMap.NET.MapProviders.OpenStreetMapQuestProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gmap.Position = new PointLatLng(48.74894534, 16.12792969); // Centering the map over Europe at startup;
             gmap.OnMarkerEnter += gmap_OnMarkerEnter;
@@ -133,12 +134,12 @@ namespace PristineGatherings
          */
         private void TestPlaceSomeEventsOnMap()
         {
-            eventsList.Add(new MapEvent("Netherlands, Amsterdam", this));
-            eventsList.Add(new MapEvent("Germany, Berlin", this));
-            eventsList.Add(new MapEvent("Ukraine", this));
-            eventsList.Add(new MapEvent("Tokyo", this));
-            eventsList.Add(new MapEvent("Larache", this));
-            eventsList.Add(new MapEvent("Zwolle", this));
+            eventsList.Add(new MapEvent("Lieven de Keystraat, Almere, Flevoland, Nederland, 1333PA, Nederland", gmap, this));
+            eventsList.Add(new MapEvent("Germany, Berlin", gmap, this));
+            eventsList.Add(new MapEvent("Ukraine", gmap, this));
+            eventsList.Add(new MapEvent("Tokyo", gmap, this));
+            eventsList.Add(new MapEvent("Larache", gmap, this));
+            eventsList.Add(new MapEvent("Zwolle", gmap, this));
 
         }
     }

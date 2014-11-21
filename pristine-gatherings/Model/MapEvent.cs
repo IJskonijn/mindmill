@@ -1,5 +1,6 @@
 ﻿using GMap.NET;
 using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace PristineGatherings
             set { marker = value; }
         }
 
-        public MapEvent(string locationKeywords, Form1 gmap)
+        public MapEvent(string locationKeywords, GMapControl gmap, Form1 mainView)
         {
             this.isDeleted = false;
 
@@ -37,9 +38,10 @@ namespace PristineGatherings
 
             if(pos != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
             {
-                marker = new Marker(pos.Value, PristineGatherings.Properties.Resources.map_marker);
-                gmap.MarkersOverlay.Markers.Add(marker);
-                gmap.MarkersOverlay.Control.Invalidate(); 
+                marker = new Marker(gmap, pos.Value, PristineGatherings.Properties.Resources.map_marker);
+                mainView.MarkersOverlay.Markers.Add(marker);
+                mainView.MarkersOverlay.Control.Invalidate(); 
+
             }
             else
             {

@@ -1,4 +1,5 @@
 ﻿using GMap.NET;
+using GMap.NET.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,12 +15,12 @@ namespace PristineGatherings
         private int x;
         private int y;
 
-        public Marker(PointLatLng latLong, Bitmap image) : base(latLong)
+        public Marker(GMapControl gmap, PointLatLng latLong, Bitmap image) : base(latLong)
         {
             this.image = image;
             base.Size = image.Size;
             CenterMarker();
-            base.LocalPosition = new Point(x, y);
+                    
         }
 
         public override void OnRender(Graphics g)
@@ -32,8 +33,8 @@ namespace PristineGatherings
 
         private void CenterMarker()
         {
-            x = LocalPosition.X - (image.Width / 2);
-            y = LocalPosition.Y - image.Height;      
+            this.x = LocalPosition.X - (image.Width / 2);
+            this.y = LocalPosition.Y - image.Height;      
         }
 
 
