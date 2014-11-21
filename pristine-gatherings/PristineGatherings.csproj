@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net">
-      <HintPath>dlls\BCrypt.Net.dll</HintPath>
+      <HintPath>packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -179,6 +179,7 @@
   <ItemGroup>
     <Content Include="GMap.NET.Core.dll" />
     <Content Include="GMap.NET.WindowsForms.dll" />
+    <Content Include="LICENSE.txt" />
     <Content Include="Resources\exit.ico" />
     <None Include="Resources\exit2.png" />
     <None Include="Resources\button2_enter.png" />
