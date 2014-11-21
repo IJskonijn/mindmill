@@ -40,7 +40,7 @@ namespace PristineGatherings
 
             this.MinimizeBox = false;
             this.MaximizeBox = false;
-            this.ControlBox = false;
+            //this.ControlBox = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
 
