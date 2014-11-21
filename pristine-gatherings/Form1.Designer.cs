@@ -87,10 +87,15 @@
             // hScrollBar1
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(224, 358);
+            this.hScrollBar1.LargeChange = 1;
+            this.hScrollBar1.Location = new System.Drawing.Point(155, 335);
+            this.hScrollBar1.Maximum = 16;
+            this.hScrollBar1.Minimum = 3;
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(189, 40);
+            this.hScrollBar1.Size = new System.Drawing.Size(292, 40);
             this.hScrollBar1.TabIndex = 2;
+            this.hScrollBar1.Value = 3;
+            this.hScrollBar1.ValueChanged += new System.EventHandler(this.hScrollBar1_ValueChanged);
             // 
             // Form1
             // 
