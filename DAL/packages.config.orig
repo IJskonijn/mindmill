@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<packages>
+<<<<<<< HEAD
+  <package id="EntityFramework" version="6.1.1" targetFramework="net45" />
+=======
+  <package id="EntityFramework" version="5.0.0" targetFramework="net45" />
+>>>>>>> a6351f115e3aad258326909bde756d24fa588161
+</packages>
