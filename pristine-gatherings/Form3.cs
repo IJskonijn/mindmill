@@ -53,7 +53,7 @@ namespace PristineGatherings
         {
             using (var db = new pristinedbEntities())
             {
-                var user = new user { email = Email, voornaam = Fname, achternaam = Lname, password = Pass };
+                var user = new user { email = Email, voornaam = Fname, achternaam = Lname, password = BCrypt.Net.BCrypt.HashPassword(Pass, 13) };
                 db.user.Add(user);
                 db.SaveChanges();
             }
