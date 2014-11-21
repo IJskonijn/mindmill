@@ -34,7 +34,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
+=======
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
             this.SuspendLayout();
             // 
             // textBox1
@@ -151,8 +155,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.CancelButton = this.button2;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(277, 334);
             this.Controls.Add(this.label3);
+=======
+            this.ClientSize = new System.Drawing.Size(254, 120);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
@@ -178,6 +189,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+<<<<<<< HEAD
 
+=======
+        private System.Windows.Forms.LinkLabel linkLabel1;
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
     }
 }

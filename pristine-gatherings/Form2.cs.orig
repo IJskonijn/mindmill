@@ -12,10 +12,17 @@ namespace PristineGatherings
 {
     public partial class Form2 : Form
     {
+<<<<<<< HEAD
         private static string TxtBox1_InitialText = "Email address";
         private static string TxtBox2_InitialText = "Password";
         private string user;
         private string pass;
+=======
+
+        private String User;
+        private String Pass;
+        private Form1 Main;
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
         bool IsValidEmail(string email)
         {
             try
@@ -96,14 +103,10 @@ namespace PristineGatherings
         private void button2_Click(object sender, EventArgs e)
         {
             this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonclick));
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Main.ShowRegister();
             this.Dispose();
         }
 
+<<<<<<< HEAD
         private void button2_MouseEnter(object sender, EventArgs e)
         {
             this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonenter));
@@ -162,6 +165,12 @@ namespace PristineGatherings
             rect.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rect, Color.DeepSkyBlue, ButtonBorderStyle.Solid);
 
+=======
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Main.ShowRegister();
+            this.Dispose();
+>>>>>>> 3471e7d51f9dd6294f35eaf0bb934856d1214757
         }
     }
 }
