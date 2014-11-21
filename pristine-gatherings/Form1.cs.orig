@@ -33,7 +33,7 @@ namespace PristineGatherings
             this.Size = Screen.PrimaryScreen.Bounds.Size;  
        
 =======
-            this.Size = Screen.PrimaryScreen.Bounds.Size;          
+            this.Size = Screen.PrimaryScreen.Bounds.Size;  
 >>>>>>> c56746e6b9a808278ee6867df42af015cdcd5ef5
         }
 
@@ -159,6 +159,26 @@ namespace PristineGatherings
             {
                 System.IO.File.Delete(upload);
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_click));
+            new Form2();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_enter));
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2));
         }
     }
 }

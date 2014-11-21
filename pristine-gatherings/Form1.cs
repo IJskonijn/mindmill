@@ -59,7 +59,6 @@ namespace PristineGatherings
             TestPlaceSomeEventsOnMap(); // Test placing events on map.
 
             gmap.Invalidate();
-
         }
 
         // Deletes the marker when it is clicked.
@@ -123,16 +122,11 @@ namespace PristineGatherings
 
         //}
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            new Form2(this);
         }
 
         public void ShowRegister()
         {
             new Form3();
-        }
-
         /*
          * Test method to add some markers at the keyword place.
          */
@@ -155,6 +149,23 @@ namespace PristineGatherings
             {
                 System.IO.File.Delete(upload);
             }
+        }
+
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_click));
+            new Form2();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_enter));
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2));
         }
     }
 }
