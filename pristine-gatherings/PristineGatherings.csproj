@@ -167,6 +167,7 @@
     <Content Include="GMap.NET.Core.dll" />
     <Content Include="GMap.NET.WindowsForms.dll" />
     <Content Include="Resources\exit.ico" />
+    <None Include="Resources\exit2.png" />
     <None Include="Resources\button2_enter.png" />
     <None Include="Resources\button2_click.png" />
     <None Include="Resources\button2.png" />
