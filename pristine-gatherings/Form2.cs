@@ -64,6 +64,7 @@ namespace PristineGatherings
 
                 if (IsValidEmail(User))
                 {
+                    Login();
                     MessageBox.Show("henk = true");
                     this.Dispose();
                 }
