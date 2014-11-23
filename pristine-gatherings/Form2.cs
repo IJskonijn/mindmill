@@ -56,7 +56,22 @@ namespace PristineGatherings
 
         private void Login() 
         {
-            //database here
+            using (var db = new pristinedbEntities())
+            {
+                var query = from u in db.user
+                            where u.email == this.user
+                            orderby u.email
+                            select u;
+
+                List<PristineGatherings.user> results = query.ToList();
+                if(results.Count == 1)
+                {
+                    if (BCrypt.Net.BCrypt.Verify(user, results[0].password))
+                    {
+                        Console.WriteLine("It works! U logged in!");
+                    }
+                }
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
