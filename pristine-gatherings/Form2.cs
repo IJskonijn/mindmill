@@ -63,7 +63,7 @@ namespace PristineGatherings
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton_click));
 
-            if(textBox1.TextLength > 0 && textBox2.TextLength > 0)
+            if(textBox1.TextLength > 0 && textBox2.TextLength > 0 && (textBox1.Text != TxtBox1_InitialText || textBox2.Text != TxtBox2_InitialText))
             {
                 user = textBox1.Text;
                 pass = textBox2.Text;
@@ -76,12 +76,16 @@ namespace PristineGatherings
                 }
                 else
                 {
-                    MessageBox.Show("Not a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Not a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    label5.Image = Properties.Resources.erroricon;
+                    label4.Text = "Not a valid email address.";
                 }
             }
             else
             {
-                MessageBox.Show("You didn't fill in all the required values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("You didn't fill in all the required values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label5.Image = Properties.Resources.erroricon;
+                label4.Text = "You didn't fill in all the required values.";
             }         
         }
 
@@ -157,13 +161,19 @@ namespace PristineGatherings
             }
         }
 
-        private void Form2_Paint(object sender, PaintEventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            System.Drawing.Rectangle rect = new Rectangle(textBox1.Location.X, textBox1.Location.Y, textBox1.ClientSize.Width, textBox1.ClientSize.Height);
+            // DO something, registreren ofzo
+        }
 
-            rect.Inflate(1, 1); // border thickness
-            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rect, Color.DeepSkyBlue, ButtonBorderStyle.Solid);
+        private void label6_MouseEnter(object sender, EventArgs e)
+        {
+            label6.BackColor = System.Drawing.Color.FromArgb(189, 235, 253);
+        }
 
+        private void label6_MouseLeave(object sender, EventArgs e)
+        {
+            label6.BackColor = System.Drawing.Color.LightSkyBlue;
         }
     }
 }
