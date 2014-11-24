@@ -169,4 +169,22 @@
   <data name="erroricon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\erroricon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="closeicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeicon_enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeicon_enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exitbuttonenter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exitbuttonenter2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconerror" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconerror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbutton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbutton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbutton2_enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbutton2_enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
