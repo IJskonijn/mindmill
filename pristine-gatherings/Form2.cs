@@ -66,7 +66,7 @@ namespace PristineGatherings
                 List<PristineGatherings.user> results = query.ToList();
                 if(results.Count == 1)
                 {
-                    if (BCrypt.Net.BCrypt.Verify(user, results[0].password))
+                    if (BCrypt.Net.BCrypt.Verify(pass, results[0].password))
                     {
                         Console.WriteLine("It works! U logged in!");
                     }
