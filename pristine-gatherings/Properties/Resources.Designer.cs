@@ -113,6 +113,36 @@ namespace PristineGatherings.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closeicon {
+            get {
+                object obj = ResourceManager.GetObject("closeicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap closeicon_enter {
+            get {
+                object obj = ResourceManager.GetObject("closeicon_enter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap erroricon {
+            get {
+                object obj = ResourceManager.GetObject("erroricon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
@@ -156,6 +186,26 @@ namespace PristineGatherings.Properties {
         internal static System.Drawing.Bitmap exitbuttonenter {
             get {
                 object obj = ResourceManager.GetObject("exitbuttonenter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exitbuttonenter2 {
+            get {
+                object obj = ResourceManager.GetObject("exitbuttonenter2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconerror {
+            get {
+                object obj = ResourceManager.GetObject("iconerror", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +266,26 @@ namespace PristineGatherings.Properties {
         internal static System.Drawing.Bitmap smallbutton_enter {
             get {
                 object obj = ResourceManager.GetObject("smallbutton_enter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smallbutton2 {
+            get {
+                object obj = ResourceManager.GetObject("smallbutton2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smallbutton2_enter {
+            get {
+                object obj = ResourceManager.GetObject("smallbutton2_enter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
