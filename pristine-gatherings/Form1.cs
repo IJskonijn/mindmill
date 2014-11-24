@@ -165,7 +165,7 @@ namespace PristineGatherings
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_click));
-            new Form2(this);
+            new Login(this);
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)

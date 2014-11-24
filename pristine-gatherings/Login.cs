@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PristineGatherings
 {
-    public partial class Form2 : Form
+    public partial class Login : Form
     {
         private static string TxtBox1_InitialText = "E-mail";
         private static string TxtBox2_InitialText = "Password";
-        private string user;
-        private string pass;
+        private string user, pass;
         private Form1 Main;
         bool IsValidEmail(string email)
         {
@@ -36,12 +30,12 @@ namespace PristineGatherings
             }
         }
 
-        public Form2(Form1 main)
+        public Login(Form1 main)
         {
             InitializeComponent();
 
-            textBox1.Text = TxtBox1_InitialText;
-            textBox2.Text = TxtBox2_InitialText;
+            namebox.Text = TxtBox1_InitialText;
+            passbox.Text = TxtBox2_InitialText;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
             //this.ControlBox = false;
@@ -54,7 +48,7 @@ namespace PristineGatherings
             this.ShowDialog();
         }
 
-        private void Login(String username, String password) 
+        private void FuncLogin(String username, String password) 
         {
             using (var db = new pristinedbEntities())
             {
@@ -76,14 +70,14 @@ namespace PristineGatherings
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.TextLength > 0 && textBox2.TextLength > 0 && (textBox1.Text != TxtBox1_InitialText || textBox2.Text != TxtBox2_InitialText))
+            if(namebox.TextLength > 0 && passbox.TextLength > 0 && (namebox.Text != TxtBox1_InitialText || passbox.Text != TxtBox2_InitialText))
             {
-                user = textBox1.Text;
-                pass = textBox2.Text;
+                user = namebox.Text;
+                pass = passbox.Text;
 
                 if (IsValidEmail(user))
                 {
-                    Login(user, pass);
+                    FuncLogin(user, pass);
                     MessageBox.Show("henk = true");
                     this.Dispose();
                 }
@@ -104,69 +98,69 @@ namespace PristineGatherings
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton_enter));
-            this.button1.Cursor = Cursors.Hand;
+            this.loginbutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton_enter));
+            this.loginbutton.Cursor = Cursors.Hand;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton));
+            this.loginbutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonclick));
+            this.closebutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonclick));
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonenter));
-            this.button2.Cursor = Cursors.Hand;
+            this.closebutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonenter));
+            this.closebutton.Cursor = Cursors.Hand;
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            this.button2.BackgroundImage = null;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.closebutton.BackgroundImage = null;
+            this.closebutton.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == TxtBox1_InitialText)
+            if (namebox.Text == TxtBox1_InitialText)
             {
-                textBox1.Clear();
-                textBox1.ForeColor = System.Drawing.Color.Black;
+                namebox.Clear();
+                namebox.ForeColor = System.Drawing.Color.Black;
             }
 
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == string.Empty)
+            if (namebox.Text == string.Empty)
             {
-                textBox1.Text = TxtBox1_InitialText;
-                textBox1.ForeColor = System.Drawing.Color.LightGray;
+                namebox.Text = TxtBox1_InitialText;
+                namebox.ForeColor = System.Drawing.Color.LightGray;
             }
         }
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == TxtBox2_InitialText)
+            if (passbox.Text == TxtBox2_InitialText)
             {
-                textBox2.Clear();
-                textBox2.PasswordChar = '*';
-                textBox2.ForeColor = System.Drawing.Color.Black;
+                passbox.Clear();
+                passbox.PasswordChar = '*';
+                passbox.ForeColor = System.Drawing.Color.Black;
             }
 
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == string.Empty)
+            if (passbox.Text == string.Empty)
             {
-                textBox2.PasswordChar = '\0';
-                textBox2.Text = TxtBox2_InitialText;
-                textBox2.ForeColor = System.Drawing.Color.LightGray;
+                passbox.PasswordChar = '\0';
+                passbox.Text = TxtBox2_InitialText;
+                passbox.ForeColor = System.Drawing.Color.LightGray;
             }
         }
 
@@ -179,13 +173,13 @@ namespace PristineGatherings
 
         private void label6_MouseEnter(object sender, EventArgs e)
         {
-            this.label6.Cursor = Cursors.Hand;
-            label6.BackColor = System.Drawing.Color.FromArgb(189, 235, 253);
+            this.registerbutton.Cursor = Cursors.Hand;
+            registerbutton.BackColor = System.Drawing.Color.FromArgb(189, 235, 253);
         }
 
         private void label6_MouseLeave(object sender, EventArgs e)
         {
-            label6.BackColor = System.Drawing.Color.LightSkyBlue;
+            registerbutton.BackColor = System.Drawing.Color.LightSkyBlue;
         }
     }
 }
