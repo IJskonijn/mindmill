@@ -19,6 +19,7 @@ namespace PristineGatherings
     {
         private GMapOverlay markersOverlay; // Layer of markers.
         private List<MapEvent> eventsList; // List of all the events on the map;
+        private int currentZoomLevel;
 
         public GMapOverlay MarkersOverlay
         {
@@ -43,6 +44,7 @@ namespace PristineGatherings
             gmap.OnMarkerEnter += gmap_OnMarkerEnter;
             gmap.OnMarkerLeave += gmap_OnMarkerLeave;
             gmap.OnMarkerClick += gmap_OnMarkerClick;
+            gmap.OnMapZoomChanged += gmap_OnMapZoomChanged;
             gmap.Size = this.Size;
             gmap.ShowCenter = false; // Disables blue middle marker.
             double minLat = -85;
@@ -50,8 +52,11 @@ namespace PristineGatherings
             double minLng = -155;
             double maxLng = 155;
             gmap.BoundsOfMap = new RectLatLng?(new RectLatLng(maxLat, minLng, maxLng - minLng, maxLat - minLat));
-             
+            currentZoomLevel = (int)gmap.Zoom;
+            hScrollBar1.Value = currentZoomLevel;
 
+            
+             
             markersOverlay = new GMapOverlay();
             this.eventsList = new List<MapEvent>();
             
@@ -60,6 +65,11 @@ namespace PristineGatherings
             TestPlaceSomeEventsOnMap(); // Test placing events on map.
 
             gmap.Invalidate();
+        }
+
+        void gmap_OnMapZoomChanged()
+        {
+            hScrollBar1.Value = (int)gmap.Zoom; 
         }
 
         // Deletes the marker when it is clicked.
@@ -167,6 +177,14 @@ namespace PristineGatherings
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2));
+        }
+
+        private void hScrollBar1_ValueChanged(object sender, EventArgs e)
+        {
+            if ((int)gmap.Zoom != hScrollBar1.Value)
+            {
+                gmap.Zoom = hScrollBar1.Value;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

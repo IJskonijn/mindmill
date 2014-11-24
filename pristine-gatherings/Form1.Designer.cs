@@ -112,6 +112,13 @@
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
+            this.hScrollBar1.LargeChange = 1;
+            this.hScrollBar1.Location = new System.Drawing.Point(155, 335);
+            this.hScrollBar1.Maximum = 16;
+            this.hScrollBar1.Minimum = 3;
+            this.hScrollBar1.Size = new System.Drawing.Size(292, 40);
+            this.hScrollBar1.Value = 3;
+            this.hScrollBar1.ValueChanged += new System.EventHandler(this.hScrollBar1_ValueChanged);
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

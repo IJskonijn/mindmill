@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>dlls\BCrypt.Net.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dlls\BCrypt.Net.dll</HintPath>
     </Reference>
