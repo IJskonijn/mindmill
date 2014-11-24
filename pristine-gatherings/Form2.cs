@@ -54,19 +54,19 @@ namespace PristineGatherings
             this.ShowDialog();
         }
 
-        private void Login() 
+        private void Login(String username, String password) 
         {
             using (var db = new pristinedbEntities())
             {
                 var query = from u in db.user
-                            where u.email == this.user
+                            where u.email == username
                             orderby u.email
                             select u;
 
                 List<PristineGatherings.user> results = query.ToList();
                 if(results.Count == 1)
                 {
-                    if (BCrypt.Net.BCrypt.Verify(pass, results[0].password))
+                    if (BCrypt.Net.BCrypt.Verify(password, results[0].password))
                     {
                         Console.WriteLine("It works! U logged in!");
                     }
@@ -83,7 +83,7 @@ namespace PristineGatherings
 
                 if (IsValidEmail(user))
                 {
-                    Login();
+                    Login(user, pass);
                     MessageBox.Show("henk = true");
                     this.Dispose();
                 }
