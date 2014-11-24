@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
 namespace PristineGatherings
 {
-    public partial class Form3 : Form
+    public partial class Register : Form
     {
         private static string TxtBox1_InitialText = "E-mail";
         private static string TxtBox2_InitialText = "Password";
@@ -19,7 +14,6 @@ namespace PristineGatherings
         private static string TxtBox4_InitialText = "Last Name";
         private String Email, Pass, Fname, Lname;
         private Image ProfilePic;
-        private Form1 Main;
         bool IsValidEmail(string email)
         {
             try
@@ -40,14 +34,14 @@ namespace PristineGatherings
             }
         }
 
-        public Form3()
+        public Register()
         {
             InitializeComponent();
 
-            textBox1.Text = TxtBox1_InitialText;
-            textBox2.Text = TxtBox2_InitialText;
-            textBox3.Text = TxtBox3_InitialText;
-            textBox4.Text = TxtBox4_InitialText;
+            Emailbox.Text = TxtBox1_InitialText;
+            Passbox.Text = TxtBox2_InitialText;
+            Firstnamebox.Text = TxtBox3_InitialText;
+            Lastnamebox.Text = TxtBox4_InitialText;
             this.MinimizeBox = false;
             this.MaximizeBox = false;
             //this.ControlBox = false;
@@ -57,11 +51,11 @@ namespace PristineGatherings
             this.ShowDialog();
         }
 
-        public void RegNewUser()
+        public void RegNewUser(String email, String password, String firstname, String lastname)
         {
             using (var db = new pristinedbEntities())
             {
-                var user = new user { email = Email, voornaam = Fname, achternaam = Lname, password = BCrypt.Net.BCrypt.HashPassword(Pass, 13) };
+                var user = new user { email = email, voornaam = firstname, achternaam = lastname, password = BCrypt.Net.BCrypt.HashPassword(password, 13) };
                 db.user.Add(user);
                 db.SaveChanges();
             }
@@ -74,35 +68,35 @@ namespace PristineGatherings
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonenter2));
-            this.button2.Cursor = Cursors.Hand;
+            this.closebutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonenter2));
+            this.closebutton.Cursor = Cursors.Hand;
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            this.button2.BackgroundImage = null;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.closebutton.BackgroundImage = null;
+            this.closebutton.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //authentication info
-            Email = textBox1.Text;
-            Pass = textBox2.Text;
+            Email = Emailbox.Text;
+            Pass = Passbox.Text;
 
             //profile info
-            Fname = textBox3.Text;
-            Lname = textBox4.Text;
+            Fname = Firstnamebox.Text;
+            Lname = Lastnamebox.Text;
             ProfilePic = pictureBox1.Image;
 
             if (Email.Length >= 5 && Pass.Length >= 5 && Fname.Length >= 1 && Lname.Length >= 1 &&
-                (textBox1.Text != TxtBox1_InitialText || textBox2.Text != TxtBox2_InitialText || textBox4.Text != TxtBox4_InitialText || textBox4.Text != TxtBox4_InitialText))
+                (Emailbox.Text != TxtBox1_InitialText || Passbox.Text != TxtBox2_InitialText || Lastnamebox.Text != TxtBox4_InitialText || Lastnamebox.Text != TxtBox4_InitialText))
             {
                 if (IsValidEmail(Email))
                 {
                     if (Pass.Any(c => char.IsDigit(c)))
                     {
-                        RegNewUser();
+                        RegNewUser(Email, Pass, Fname, Lname);
                         MessageBox.Show("henk = true");
                         this.Dispose();
                     }
@@ -132,90 +126,90 @@ namespace PristineGatherings
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton2_enter));
-            this.button1.Cursor = Cursors.Hand;
+            this.Regbutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton2_enter));
+            this.Regbutton.Cursor = Cursors.Hand;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton2));
+            this.Regbutton.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton2));
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == TxtBox1_InitialText)
+            if (Emailbox.Text == TxtBox1_InitialText)
             {
-                textBox1.Clear();
-                textBox1.ForeColor = System.Drawing.Color.Black;
+                Emailbox.Clear();
+                Emailbox.ForeColor = System.Drawing.Color.Black;
             }
 
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == string.Empty)
+            if (Emailbox.Text == string.Empty)
             {
-                textBox1.Text = TxtBox1_InitialText;
-                textBox1.ForeColor = System.Drawing.Color.LightGray;
+                Emailbox.Text = TxtBox1_InitialText;
+                Emailbox.ForeColor = System.Drawing.Color.LightGray;
             }
         }
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == TxtBox2_InitialText)
+            if (Passbox.Text == TxtBox2_InitialText)
             {
-                textBox2.Clear();
-                textBox2.PasswordChar = '*';
-                textBox2.ForeColor = System.Drawing.Color.Black;
+                Passbox.Clear();
+                Passbox.PasswordChar = '*';
+                Passbox.ForeColor = System.Drawing.Color.Black;
             }
 
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == string.Empty)
+            if (Passbox.Text == string.Empty)
             {
-                textBox2.PasswordChar = '\0';
-                textBox2.Text = TxtBox2_InitialText;
-                textBox2.ForeColor = System.Drawing.Color.LightGray;
+                Passbox.PasswordChar = '\0';
+                Passbox.Text = TxtBox2_InitialText;
+                Passbox.ForeColor = System.Drawing.Color.LightGray;
             }
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
         {
-            if (textBox3.Text == TxtBox3_InitialText)
+            if (Firstnamebox.Text == TxtBox3_InitialText)
             {
-                textBox3.Clear();
-                textBox3.ForeColor = System.Drawing.Color.Black;
+                Firstnamebox.Clear();
+                Firstnamebox.ForeColor = System.Drawing.Color.Black;
             }
 
         }
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (textBox3.Text == string.Empty)
+            if (Firstnamebox.Text == string.Empty)
             {
-                textBox3.Text = TxtBox3_InitialText;
-                textBox3.ForeColor = System.Drawing.Color.LightGray;
+                Firstnamebox.Text = TxtBox3_InitialText;
+                Firstnamebox.ForeColor = System.Drawing.Color.LightGray;
             }
         }
 
         private void textBox4_Enter(object sender, EventArgs e)
         {
-            if (textBox4.Text == TxtBox4_InitialText)
+            if (Lastnamebox.Text == TxtBox4_InitialText)
             {
-                textBox4.Clear();
-                textBox4.ForeColor = System.Drawing.Color.Black;
+                Lastnamebox.Clear();
+                Lastnamebox.ForeColor = System.Drawing.Color.Black;
             }
 
         }
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
-            if (textBox4.Text == string.Empty)
+            if (Lastnamebox.Text == string.Empty)
             {
-                textBox4.Text = TxtBox4_InitialText;
-                textBox4.ForeColor = System.Drawing.Color.LightGray;
+                Lastnamebox.Text = TxtBox4_InitialText;
+                Lastnamebox.ForeColor = System.Drawing.Color.LightGray;
             }
         }
 
@@ -231,10 +225,19 @@ namespace PristineGatherings
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK) 
             {
-                var fileName = openFileDialog1.FileName;
-                System.IO.File.Copy(fileName, Path.Combine(Path.GetDirectoryName(fileName), upload + "profile.jpg"), true);
-                pictureBox1.ImageLocation = upload + "profile.jpg";
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                Email = Emailbox.Text;
+
+                if (Email.Length > 5 && IsValidEmail(Email))
+                {
+                    var fileName = openFileDialog1.FileName;
+                    System.IO.File.Copy(fileName, Path.Combine(Path.GetDirectoryName(fileName), upload + Email + ".jpg"), true);
+                    pictureBox1.ImageLocation = upload + Email + ".jpg";
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in an email address first", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

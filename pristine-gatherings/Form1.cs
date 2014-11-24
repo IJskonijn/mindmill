@@ -125,7 +125,7 @@ namespace PristineGatherings
 
         public void ShowRegister()
         {
-            new Form3();
+            new Register();
         }
 
         /*
