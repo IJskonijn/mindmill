@@ -14,8 +14,8 @@ namespace PristineGatherings
     {
         private Marker marker;
         private PointLatLng worldLocation;
-        private string eventName;
-        private string eventInformation;
+        //private string eventName;
+        //private string eventInformation;
         private bool isDeleted;
 
         public bool IsDeleted
