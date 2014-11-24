@@ -59,7 +59,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(628, 409);
+            this.gmap.Size = new System.Drawing.Size(837, 503);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 5D;
             // 
@@ -71,23 +71,26 @@
             // hScrollBar1
             // 
             this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(224, 358);
+            this.hScrollBar1.Location = new System.Drawing.Point(299, 441);
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(189, 40);
+            this.hScrollBar1.Size = new System.Drawing.Size(252, 40);
             this.hScrollBar1.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::PristineGatherings.Properties.Resources.exit2;
+            this.pictureBox1.BackgroundImage = global::PristineGatherings.Properties.Resources.closeicon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(595, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(808, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // button1
             // 
@@ -95,10 +98,11 @@
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::PristineGatherings.Properties.Resources.button2;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(539, 24);
+            this.button1.Location = new System.Drawing.Point(748, 144);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 97);
@@ -108,25 +112,12 @@
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(224, 358);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(189, 40);
-            this.hScrollBar1.TabIndex = 2;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(628, 408);
+            this.ClientSize = new System.Drawing.Size(837, 502);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.button1);

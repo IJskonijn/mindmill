@@ -12,7 +12,7 @@ namespace PristineGatherings
 {
     public partial class Form2 : Form
     {
-        private static string TxtBox1_InitialText = "Email address";
+        private static string TxtBox1_InitialText = "E-mail";
         private static string TxtBox2_InitialText = "Password";
         private string user;
         private string pass;
@@ -46,7 +46,7 @@ namespace PristineGatherings
             this.MaximizeBox = false;
             //this.ControlBox = false;
             this.ShowIcon = false;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;
 
             this.Main = main;
@@ -76,9 +76,7 @@ namespace PristineGatherings
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton_click));
-
-            if(textBox1.TextLength > 0 && textBox2.TextLength > 0)
+            if(textBox1.TextLength > 0 && textBox2.TextLength > 0 && (textBox1.Text != TxtBox1_InitialText || textBox2.Text != TxtBox2_InitialText))
             {
                 user = textBox1.Text;
                 pass = textBox2.Text;
@@ -91,18 +89,23 @@ namespace PristineGatherings
                 }
                 else
                 {
-                    MessageBox.Show("Not a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Not a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    label5.Image = Properties.Resources.iconerror;
+                    label4.Text = "Not a valid email address";
                 }
             }
             else
             {
-                MessageBox.Show("You didn't fill in all the required values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("You didn't fill in all the required values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label5.Image = Properties.Resources.iconerror;
+                label4.Text = "You didn't fill in all the required values";
             }         
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.smallbutton_enter));
+            this.button1.Cursor = Cursors.Hand;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -115,15 +118,10 @@ namespace PristineGatherings
             this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonclick));
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Main.ShowRegister();
-            this.Dispose();
-        }
-
         private void button2_MouseEnter(object sender, EventArgs e)
         {
             this.button2.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.exitbuttonenter));
+            this.button2.Cursor = Cursors.Hand;
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
@@ -172,13 +170,22 @@ namespace PristineGatherings
             }
         }
 
-        private void Form2_Paint(object sender, PaintEventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            System.Drawing.Rectangle rect = new Rectangle(textBox1.Location.X, textBox1.Location.Y, textBox1.ClientSize.Width, textBox1.ClientSize.Height);
+            // DO something, registreren ofzo
+            Main.ShowRegister();
+            //this.Dispose();
+        }
 
-            rect.Inflate(1, 1); // border thickness
-            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rect, Color.DeepSkyBlue, ButtonBorderStyle.Solid);
+        private void label6_MouseEnter(object sender, EventArgs e)
+        {
+            this.label6.Cursor = Cursors.Hand;
+            label6.BackColor = System.Drawing.Color.FromArgb(189, 235, 253);
+        }
 
+        private void label6_MouseLeave(object sender, EventArgs e)
+        {
+            label6.BackColor = System.Drawing.Color.LightSkyBlue;
         }
     }
 }

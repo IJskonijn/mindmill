@@ -161,6 +161,7 @@ namespace PristineGatherings
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.button2_enter));
+            this.button1.Cursor = Cursors.Hand;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -171,6 +172,17 @@ namespace PristineGatherings
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.closeicon_enter));
+            this.pictureBox1.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.closeicon));
         }
     }
 }
